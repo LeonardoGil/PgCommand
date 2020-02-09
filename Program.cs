@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PgCommand.Infra;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace PgCommand
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+
+            var container = DependencyInjection.Config();
+            Application.Run(container.GetInstance<FrmPrincipal>());
         }
     }
 }

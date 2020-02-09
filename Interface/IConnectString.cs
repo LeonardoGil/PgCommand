@@ -9,9 +9,12 @@ namespace PgCommand.Interface
 {
     interface IConnectString
     {
+        string User { get; set; }
         string Host { get; set; }
         string Name { get; set; }
-        MD5 Password { get; set; } 
+        string Password { get; set; } 
         int Port { get; set; }
+
+        string BuildString();
     }
 }
